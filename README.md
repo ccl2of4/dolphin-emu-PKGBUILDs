@@ -32,7 +32,7 @@ To get this .desktop file to be detected by whatever launcher/desktop environmen
 I'm not 100% sure what's all is required here, but I do know that you *at least* need to check these options for Faster Melee:
 
 * Faster Melee Netplay Settings
-* 60FPS + 4X VRH" 
+* 60FPS + 4X VRH
 
 For the 5.0 build you need to check this option:
 
