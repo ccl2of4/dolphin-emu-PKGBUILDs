@@ -1,0 +1,61 @@
+# Maintainer: Plailect <plailect@gmail.com>
+# Dolphin-Emu-Git Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Lightning <sgsdxzy@gmail.com>
+
+pkgname=dolphin-emu-git-netplay
+pkgver=5.0.r321.be9416c462
+pkgrel=1
+pkgdesc='A GameCube / Wii / Triforce emulator, v5.0-321 for Super Smash Bros Netplay'
+arch=('x86_64')
+url='http://www.dolphin-emu.org/'
+license=('GPL2')
+depends=('bluez-libs' 'enet' 'ffmpeg' 'libao' 'libevdev' 'mbedtls' 'miniupnpc'
+         'portaudio' 'sfml' 'soundtouch' 'xdg-utils' 'wxgtk')
+makedepends=('cmake' 'git' 'qt5-base')
+optdepends=('pulseaudio: PulseAudio backend')
+options=('!emptydirs')
+source=('dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#commit=be9416c'
+        'dolphin-emu.desktop')
+sha256sums=('SKIP'
+            'd00a20941c9249c535af25f56707fc65ed20341fe121e860fcf9b321e41be5cc')
+provides=('dolphin-emu')
+
+pkgver() {
+  cd dolphin-emu
+
+  git describe | sed 's/-/.r/; s/-g/./'
+}
+
+prepare() {
+  cd dolphin-emu
+
+  if [[ -d build ]]; then
+    rm -rf build
+  fi
+  mkdir build
+}
+
+build() {
+  cd dolphin-emu/build
+
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX='/opt/dolphin-emu-git-netplay' \
+    -DCMAKE_CXX_FLAGS='-fno-pie' \
+    -DENABLE_LTO='TRUE' \
+    -DUSE_SHARED_ENET='TRUE' \
+    -DDISTRIBUTOR='aur.archlinux.org'
+  make
+}
+
+package() {
+  provides=('dolphin-emu')
+
+  cd dolphin-emu/build
+
+  make DESTDIR="${pkgdir}" install
+
+  # Patch desktop file
+  cp -f "${srcdir}/dolphin-emu.desktop" "${pkgdir}"/opt/dolphin-emu-git-netplay/share/applications
+}
+
+# vim: ts=2 sw=2 et:
