@@ -31,7 +31,7 @@ options=('!emptydirs')
 source=("${pkgname}::git+https://github.com/Tinob/Ishiiruka.git#commit=0b00f1f6267190a8bf9a3584497a35d8762eb0a9"
         "GALE01.ini"
         "GALE01r2.ini"
-        "dolphin-emu.desktop"
+        "dolphin-emu-faster-melee-4.3.desktop"
        )
 
 # shellcheck disable=SC2034
@@ -83,7 +83,9 @@ package() {
   cp -f "${srcdir}/GALE01r2.ini" "${pkgdir}"/opt/dolphin-emu-faster-melee-4.3/share/dolphin-emu/sys/GameSettings/GALE01r2.ini
   
   # Patch desktop file
-  cp -f "${srcdir}/dolphin-emu.desktop" "${pkgdir}"/opt/dolphin-emu-faster-melee-4.3/share/applications
+  rm "${pkgdir}"/opt/dolphin-emu-faster-melee-4.3/share/applications/dolphin-emu.desktop
+  install -D -t "${pkgdir}"/usr/share/applications "${srcdir}/dolphin-emu-faster-melee-4.3.desktop"
+
 }
 
 # vim: ts=2 sw=2 et:
