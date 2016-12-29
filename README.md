@@ -23,7 +23,7 @@ For example
 
 ## Faster Melee (4.3 and 4.4)
 
-A file, `GALE01.ini` is provided next to the package build. You can either copy it directly to `~/.dolphin-emu/GameSettings` or do the following in dolphin's GUI:
+A file, `GALE01.ini` is provided next to the PKGBUILD. You can either copy it directly to `~/.dolphin-emu/GameSettings` or do the following in dolphin's GUI:
 
 Right click Melee ISO -> properties -> Gecko Codes
 
