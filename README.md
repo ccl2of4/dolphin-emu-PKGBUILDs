@@ -21,17 +21,28 @@ For example
 
 # Gecko Codes
 
-I'm not 100% sure what all is required here, but I do know that you *at least* need to check these options for Faster Melee:
+## Faster Melee (4.3 and 4.4)
 
-* Faster Melee Netplay Settings
-* 60FPS + 4X VRH
+A file, `GALE01.ini` is provided next to the package build. You can either copy it directly to `~/.dolphin-emu/GameSettings` or do the following in dolphin's GUI:
 
-For the 5.0 build you need to check this option:
+Right click Melee ISO -> properties -> Gecko Codes
+
+* Check Faster Melee Netplay Settings
+* Check 60FPS + 4X VRH
+* Uncheck everything else
+
+Right click Melee ISO -> properties -> GameConfig
+
+* Uncheck "Half Audio Rate"
+* Click "Video Rate Hack" so that it says "4x"
+
+## Netplay 5.0-321
+
+Right click Melee ISO -> properties -> Gecko Codes
 
 * Netplay Community Settings
+* Uncheck everything else
 
-Check just those options and uncheck everything else. You will notice that when you switch between versions it will reset the options you have checked, so if you're ever having issues connecting just double check those options again.
+## Beware
 
-If you can't find where they are, you can get to these options by opening Dolphin, right clicking on the Melee ISO -> properties -> gecko codes
-
-Also, there are also some .ini files for each package, right next to the PKGBUILDs. I'm not sure what they do. But if you've done everything and it's still not working, copy them over to `~/.local/share/dolphin-emu/GameSettings`.
+You will notice that when you switch between versions it will reset the options you have checked, so if you're ever having issues connecting just double check those options again.
