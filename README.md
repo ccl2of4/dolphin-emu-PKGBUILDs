@@ -2,7 +2,7 @@
 
 In this repo are three folders for three different packages. They will all install under separate directories in `/opt` so that they do not conflict with each other.
 
-Before installing these packages, you must first make sure you've install the regular `dolphin-emu` package.
+Before installing these packages, you must first make sure you've installed the regular `dolphin-emu` package.
 
 `pacman -S dolphin-emu`
 
@@ -21,7 +21,7 @@ For example
 
 # Gecko Codes
 
-I'm not 100% sure what's all is required here, but I do know that you *at least* need to check these options for Faster Melee:
+I'm not 100% sure what all is required here, but I do know that you *at least* need to check these options for Faster Melee:
 
 * Faster Melee Netplay Settings
 * 60FPS + 4X VRH
