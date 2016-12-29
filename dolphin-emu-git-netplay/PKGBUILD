@@ -15,7 +15,7 @@ makedepends=('cmake' 'git' 'qt5-base')
 optdepends=('pulseaudio: PulseAudio backend')
 options=('!emptydirs')
 source=('dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#commit=be9416c'
-        'dolphin-emu.desktop')
+        'dolphin-emu-git-netplay.desktop')
 sha256sums=('SKIP'
             'd00a20941c9249c535af25f56707fc65ed20341fe121e860fcf9b321e41be5cc')
 provides=('dolphin-emu')
@@ -55,7 +55,8 @@ package() {
   make DESTDIR="${pkgdir}" install
 
   # Patch desktop file
-  cp -f "${srcdir}/dolphin-emu.desktop" "${pkgdir}"/opt/dolphin-emu-git-netplay/share/applications
+  rm "${pkgdir}"/opt/dolphin-emu-git-netplay/share/applications/dolphin-emu.desktop
+  install -D -t "${pkgdir}"/usr/share/applications "${srcdir}/dolphin-emu-git-netplay.desktop"
 }
 
 # vim: ts=2 sw=2 et:
