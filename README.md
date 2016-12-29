@@ -19,14 +19,6 @@ For example
     cd dolphin-emu-faster-melee-4.3
     makepkg -si
 
-# Desktop/Menu Launcher
-
-Now you have that package installed. For each package, there should be a .desktop file located at `/opt/${package-name}/share/applications/dolphin-emu.desktop`
-
-To get this .desktop file to be detected by whatever launcher/desktop environment you use, just create a symlink to it, e.g.
-
-    ln -s /opt/dolphin-emu-git-netplay/share/applications/dolphin-emu.desktop /usr/local/share/applications/dolphin-emu-git-netplay
-
 # Gecko Codes
 
 I'm not 100% sure what's all is required here, but I do know that you *at least* need to check these options for Faster Melee:
