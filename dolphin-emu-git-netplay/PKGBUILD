@@ -15,8 +15,10 @@ makedepends=('cmake' 'git' 'qt5-base')
 optdepends=('pulseaudio: PulseAudio backend')
 options=('!emptydirs')
 source=('dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#commit=be9416c'
+        '0001-Fix-RasterFont.cpp-compile-error.patch'
         'dolphin-emu-git-netplay.desktop')
 sha256sums=('SKIP'
+            '707214c6ef26ff71b740cba51e419a5d90f509a38794ab35e17fac8656a44df3'
             'd00a20941c9249c535af25f56707fc65ed20341fe121e860fcf9b321e41be5cc')
 provides=('dolphin-emu')
 
@@ -28,6 +30,8 @@ pkgver() {
 
 prepare() {
   cd dolphin-emu
+
+  patch -p1 < ../0001-Fix-RasterFont.cpp-compile-error.patch
 
   if [[ -d build ]]; then
     rm -rf build

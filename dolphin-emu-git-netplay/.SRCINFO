@@ -24,8 +24,10 @@ pkgbase = dolphin-emu-git-netplay
 	provides = dolphin-emu
 	options = !emptydirs
 	source = dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#commit=be9416c
+	source = 0001-Fix-RasterFont.cpp-compile-error.patch
 	source = dolphin-emu-git-netplay.desktop
 	sha256sums = SKIP
+	sha256sums = 707214c6ef26ff71b740cba51e419a5d90f509a38794ab35e17fac8656a44df3
 	sha256sums = d00a20941c9249c535af25f56707fc65ed20341fe121e860fcf9b321e41be5cc
 
 pkgname = dolphin-emu-git-netplay
