@@ -23,6 +23,7 @@ pkgbase = dolphin-emu-faster-melee
 	provides = dolphin-emu
 	options = !emptydirs
 	source = dolphin-emu-faster-melee::git+https://github.com/Tinob/Ishiiruka.git#commit=0b00f1f6267190a8bf9a3584497a35d8762eb0a9
+	source = 0001-Fix-RasterFont.cpp-compile-error.patch
 	source = GALE01r2.ini
 	source = dolphin-emu-faster-melee.desktop
 	source = GALE01.ini
@@ -30,6 +31,7 @@ pkgbase = dolphin-emu-faster-melee
 	source = NMNB01.ini
 	source = PALE02.ini
 	sha256sums = SKIP
+	sha256sums = 7a512b04f1d067e7ba59f4b0c7b3720018eccfd6bb63cd5c47ac84ee82b3ccfa
 	sha256sums = eae12be9d008453d09bf1379315a2299eca9c76cc093727f8f41926193981c50
 	sha256sums = 1ce9ed4423dd5d138387fe24133edcacdc64454564c9a74a034e1b0fe9ba4122
 	sha256sums = a930e0490bfa95f66f96919d320e04f99d6988587209700a536bf7549d53466a
