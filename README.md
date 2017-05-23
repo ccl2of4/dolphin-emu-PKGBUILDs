@@ -23,7 +23,7 @@ For example
 
 For whichever build you decide to use, you must make sure you have "Enable Cheats" checked by going to Config->General.
 
-## Faster Melee (4.4)
+## Faster Melee (5.0.3)
 
 A file, `GALE01.ini` is provided next to the PKGBUILD. You can either copy it directly to `~/.dolphin-emu/GameSettings` or do the following in dolphin's GUI:
 
