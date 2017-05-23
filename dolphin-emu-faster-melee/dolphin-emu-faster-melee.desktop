@@ -5,6 +5,6 @@ Exec=/opt/dolphin-emu-faster-melee/bin/dolphin-emu
 Terminal=false
 Type=Application
 Categories=Game;Emulator;
-Name=Dolphin Emulator (Faster Melee v4.4)
+Name=Dolphin Emulator (Faster Melee v5.0.3)
 GenericName=Wii/GameCube Emulator
 Comment=A Wii/GameCube Emulator
