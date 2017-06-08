@@ -27,21 +27,27 @@ options=('!emptydirs')
 # The commit for FasterMelee 4.3 (unchanged for FasterMelee 4.4)
 # shellcheck disable=SC2034
 source=("${pkgname}::git+https://github.com/Tinob/Ishiiruka.git#commit=d462ca38724db65d7f92f3edbd16b6657291e420"
+        "GALE01r0.ini"
+        "GALE01r1.ini"
         "GALE01r2.ini"
         "dolphin-emu-faster-melee.desktop"
         "GALE01.ini"
         "MNCE02.ini"
+        "GKYE01.ini"
         "NMNB01.ini"
         "PALE02.ini"
        )
 # shellcheck disable=SC2034
 sha256sums=('SKIP'
-            'eae12be9d008453d09bf1379315a2299eca9c76cc093727f8f41926193981c50'
+            'be5bc1ed63fc6a030b39786e8dbc7074304a0b82c0333dfe27edb061b7e2dad8'
+            '1d8a2553af3581f3a80e36c95d8e01d334015ec7cd3cfc9c19b12e77230567b2'
+            'ac0c39f7fe27f1e232523b02347b0645404d40dc0e6ef328d1e37993ab94de0c'
             'e919f5edd79d411ee0517b43d69d9b87557a18d03c6e6fdf1530bf3456519cbd'
-            'a930e0490bfa95f66f96919d320e04f99d6988587209700a536bf7549d53466a'
-            '4dd62a40be7a41c92079c9ee23f5fd458c85f275431881c707450f634fdcf24c'
-            '4dd62a40be7a41c92079c9ee23f5fd458c85f275431881c707450f634fdcf24c'
-            '4dd62a40be7a41c92079c9ee23f5fd458c85f275431881c707450f634fdcf24c')
+            '6cfb98a6592dbc597b90a7c0562c4179a5f2db5f7ce293e8fad1a0bd19e8c861'
+            '858158866197425edcda5b176aa4da289eca8e5422252145c40ea1337c4a1b63'
+            '1ad7113b73fe9298a037c020cad63dded4ba842565fb7477e6240cd5d58749e9'
+            '11b5a9d907207e9732d9d1b02d99487d0cbed416f033b248baa56c47391d79f6'
+            '858158866197425edcda5b176aa4da289eca8e5422252145c40ea1337c4a1b63')
 # shellcheck disable=SC2034
 provides=('dolphin-emu')
 
@@ -89,6 +95,8 @@ package() {
   make DESTDIR="${pkgdir}" install
 
   # Patch Gecko Codes
+  cp -f "${srcdir}/GALE01r0.ini" "${pkgdir}"/opt/dolphin-emu-faster-melee/share/dolphin-emu/sys/GameSettings/GALE01r0.ini
+  cp -f "${srcdir}/GALE01r1.ini" "${pkgdir}"/opt/dolphin-emu-faster-melee/share/dolphin-emu/sys/GameSettings/GALE01r1.ini
   cp -f "${srcdir}/GALE01r2.ini" "${pkgdir}"/opt/dolphin-emu-faster-melee/share/dolphin-emu/sys/GameSettings/GALE01r2.ini
   
   # Patch desktop file
